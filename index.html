@@ -117,6 +117,33 @@
 
     <h2>アクセス管理</h2>
 
+    <h3>VPC Service Controls</h3>
+    <p>
+      Google Cloudのセキュリティ機能の一つ。
+      <m-b>サービス境界</m-b>と呼ばれる論理的な囲いを作り、セキュリティを確保する。
+      以下のようなことを実現できる。
+    </p>
+    <ul>
+      <li><m-b>BigQuery</m-b>に対するクエリの発行元を制限</li>
+      <li><m-b>Cloud Storage</m-b>からのオブジェクト読み取りのアクセス元を制限</li>
+      <li><m-b>GKE</m-b>クラスターの設定変更のアクセス元を制限</li>
+    </ul>
+
+    <h3>サービス境界の設定</h3>
+    <ul>
+      <li><m-b>外向き</m-b>と<m-b>内向き</m-b>のルールをそれぞれ設定できる</li>
+      <li>
+        以下の情報からリクエスト元を判別することができる。
+        <ul>
+          <li><m-b>IPアドレスの範囲</m-b></li>
+          <li><m-b>デバイス情報</m-b></li>
+          <li><m-b>地理的情報</m-b></li>
+          <li><m-b>GoogleCloudプロジェクト</m-b></li>
+          <li><m-b>VPCネットワーク</m-b></li>
+        </ul>
+      </li>
+    </ul>
+
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/dexie/4.0.8/dexie.min.js"
       integrity="sha512-Yp2Q03YGorJ+zy5dF6XnTwmtW9MOnJwCG15PH50C5FZcw9TaUHP3ZeSNNkkpjMUD6gOCGyWTLJRkTNjrik9oDA=="
