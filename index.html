@@ -97,12 +97,14 @@
         <tr>
           <td><m-b>リージョン永続ディスク</m-b></td>
           <td>リージョン内の2つのゾーン</td>
-          <td>やや低</td>
+          <td class="wrappable">やや低<br />※通信分のオーバーヘッドが生じる</td>
           <td>HDD、SSD</td>
         </tr>
         <tr>
           <td><m-b>ローカルSSD</m-b></td>
-          <td>なし(インスタンスが停止するとデータは削除)</td>
+          <td class="wrappable">
+            なし<br />(インスタンスが停止するとデータは削除)
+          </td>
           <td>高</td>
           <td>SSD</td>
         </tr>
@@ -132,6 +134,18 @@
     </p>
 
     <h2>データストレージ</h2>
+
+    <h3>Cloud SQL</h3>
+
+    <h3>Cloud Bigtable</h3>
+
+    <h3>Clodu Spanner</h3>
+
+    <h3>BigQuery</h3>
+
+    <h3>Memorystore</h3>
+
+    <h3>Firestore</h3>
 
     <h2>ネットワーキング</h2>
 
@@ -355,6 +369,12 @@
       </li>
       <li><m-b>多要素認証</m-b>: より強固な認証機能を提供する</li>
     </ul>
+
+    <h2>運用オペレーション</h2>
+
+    <h3>Cloud Monitoring</h3>
+
+    <h3>Cloud Logging</h3>
 
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/dexie/4.0.8/dexie.min.js"
