@@ -374,10 +374,42 @@
     <h2>データストレージ</h2>
 
     <h3>Cloud SQL</h3>
+    <p>
+      フルマネージドなRDBサービスである。
+      <m-b>Compute Engine</m-b>のインスタンスをベースに動作する。 ストレージの上限は<m-b>64TB</m-b>に設定されている。
+    </p>
+
+    <h3>Cloud SQL - 選択可能なDBMS</h3>
+    <ul>
+      <li><m-b>PostgreSQL</m-b></li>
+      <li><m-b>MySQL</m-b></li>
+      <li><m-b>SQL Server</m-b></li>
+    </ul>
+
+    <h3>Cloud SQL - HA構成</h3>
+    <p>
+      Cloud SQLでHA構成を有効にすると、
+      <m-b>リージョン</m-b>内に<m-b>プライマリゾーン</m-b>と<m-b>セカンダリゾーン</m-b>が作成される。
+      それぞれには、<m-b>プライマリインスタンス</m-b>と<m-b>スタンバイインスタンス</m-b>が配置される。
+      前者に障害が発生した場合、後者に<m-b>フェイルオーバー</m-b>が実施される。
+      このとき、クライアントがデータベースに接続するIPアドレスは変更<m-b>されない</m-b>。
+    </p>
+
+    <h3>Cloud SQL - レプリケーション</h3>
+
+    <h3>Cloud Spanner</h3>
+
+    <h3>AlloyDB for PostgreSQL</h3>
+    <p>
+      優れたパフォーマンスとスケーラビリティを備えたPostgreSQLのランタイムを提供するサービスである。 以下のような特徴がある。
+    </p>
+    <ul>
+      <li>標準のPostgreSQLと比較して、<m-b>4</m-b>倍速くワークロードを実行</li>
+      <li><m-b>HTAP</m-b>: トランザクション処理と分析処理をリアルタイムに処理するデータベースアーキテクト</li>
+      <li>MLに対応した、<m-b>適応型自動パイロット</m-b>システム</li>
+    </ul>
 
     <h3>Cloud Bigtable</h3>
-
-    <h3>Clodu Spanner</h3>
 
     <h3>BigQuery</h3>
 
