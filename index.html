@@ -1487,6 +1487,62 @@
     <h3>Cloud Monitoring</h3>
 
     <h3>Cloud Logging</h3>
+    <p>
+      ログの<m-b>表示</m-b>、<m-b>保管</m-b>、<m-b>検索</m-b>、<m-b>分析</m-b>などの機能を提供するログ管理システム。 Google
+      Cloudリソース作成、削除のログや、Google
+      Cloud、他のパブリッククラウド、オンプレ上で構築したアプリケーションのログも収集できる。<br />
+      収集されたログは、まず<m-b>ログルータ</m-b>と呼ばれるリソースに受け渡される。
+      そこで<m-b>シンク</m-b>というルールを設定することで、指定された宛先にログを転送する。
+      デフォルトで、<m-b>組織</m-b>、<m-b>フォルダ</m-b>、<m-b>プロジェクト</m-b>毎に作成される、
+      <m-b>_Required</m-b>、<m-b>_Default</m-b>という<m-b>ログバケット</m-b>が、宛先に設定されている。<br />
+      宛先にはCloud Loggingのログストレージ以外にも、<m-b>Cloud Storage</m-b
+      >、<m-b>BigQuery</m-b>、<m-b>Pub/Sub</m-b>を指定することができる。
+    </p>
+
+    <h3>Cloud Logging - 操作</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>種類</th>
+          <th>クエリ言語</th>
+          <th>ユースケース</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><m-b>ログエクスプローラ</m-b></td>
+          <td><m-b>Cloud Logging用のクエリ言語</m-b></td>
+          <td>
+            <ul>
+              <li>アプリのトラブルシューティング</li>
+              <li>パフォーマンス分析</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td><m-b>Log Analytics</m-b></td>
+          <td><m-b>SQL</m-b></td>
+          <td>
+            <ul>
+              <li>ログの集計・分析</li>
+            </ul>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Cloud Logging - ログの収集手段</h3>
+    <h4>Compute Engineインスタンス</h4>
+    <p>
+      <m-b>Opsエージェント</m-b>というエージェントをインスタンスにインストールし、標準のシステムログを収集する。
+      具体的には、Linuxの場合<m-b>/var/log/syslog</m-b>や<m-b>/var/log/messages</m-b>、Windowsの場合<m-b>イベントログ</m-b>を取得する。
+    </p>
+    <h4>GKEクラス</h4>
+    <p>
+      <m-b>Cloud Operations for GKE</m-b>という機能が、GKEクラスタの機能として提供されている。
+      これはクラスタの<m-b>作成時</m-b>にデフォルトでCloud Loggingとの統合を有効にするもので、
+      クラスタに関するどのログを転送するか制御できる。
+    </p>
 
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/dexie/4.0.8/dexie.min.js"
