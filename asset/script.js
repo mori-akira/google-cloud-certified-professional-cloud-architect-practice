@@ -1,5 +1,5 @@
 // 学習アプリ用のDB
-const db = new Dexie('PracticeAppDB');
+const db = new Dexie('PracticeAppDB_GoogleCloud_PCA');
 // 学習進捗用のデータストア
 db.version(1).stores({
     PracticeProgress: '++id, progress, datetime',
