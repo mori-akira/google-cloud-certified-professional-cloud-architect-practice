@@ -36,8 +36,102 @@
     <h2>AI/ML</h2>
 
     <h3>Vertex AI</h3>
+    <p>
+      MLモデルやAIアプリケーションの<m-b>学習</m-b>と<m-b>推論</m-b>を行ったり、
+      <m-b>LLM</m-b>のカスタマイズを行ったりできる、機械学習プラットフォーム。<br />
+      次のMLワークフローに対応した機能が提供される。
+    </p>
+    <ol>
+      <li><m-b>データの準備</m-b></li>
+      <li><m-b>モデルのトレーニング</m-b></li>
+      <li><m-b>モデル評価とインテグレーション</m-b></li>
+      <li><m-b>モデルのデプロイ</m-b></li>
+      <li><m-b>モデルのモニタリング</m-b></li>
+    </ol>
+
+    <h3>Vertex AI - データの準備</h3>
+    <p>
+      データセットの抽出や整形を行い、<m-b>EDA</m-b>を実行してデータスキーマの確認と特徴量の抽出を行い、
+      データを<m-b>訓練データ</m-b>と<m-b>テストデータ</m-b>に分割する。データの探索や可視化には<m-b
+        >Vertex AI Workbenchノートブック</m-b
+      >を使用する。 これは<m-b>Cloud Storage</m-b>や<m-b>BigQuery</m-b>と統合されていて、高速にデータアクセスが実現できる。
+      大規模なデータの場合、<m-b>Dataproc Serverless Spark</m-b>を使用し、サーバーレスにワークロードを実行する。
+    </p>
+
+    <h3>Vertex AI - モデルのトレーニング</h3>
+    <p>以下のようなトレーニング方法を選択できる。</p>
+    <ul>
+      <li><m-b>AutoML</m-b>: コードを記述せずにモデルをトレーニングする。</li>
+      <li>
+        カスタムトレーニング:
+        <m-b>PyTorch</m-b>、<m-b>TensorFlow</m-b>、<m-b>scikit-learn</m-b>などを用いて、 独自のトレーニングコードを開発する。
+      </li>
+      <li><m-b>Vertex AI Vizier</m-b>: MLモデルのハイパーパラメータをチューニングする。</li>
+      <li><m-b>Vertex AI Experiments</m-b>: 様々な手法でモデルをトレーニングし、比較できる。</li>
+    </ul>
+
+    <h3>Vertex AI - モデル評価とインテグレーション</h3>
+    <p>
+      <m-b>Vertex AI Pipelines</m-b>を用いて、トレーニングやモデル評価を行うパイプラインを構築し、 基準を満たすモデルを<m-b
+        >Vertex AI Model Registry</m-b
+      >に登録することができる。
+    </p>
+
+    <h3>Vertex AI - モデルのデプロイ</h3>
+    <p>
+      ユースケースに応じてVMやコンテナなどのランタイム環境を用意し、推論を実行する。<br />
+      特徴量を一元管理するソリューションとして、<m-b>Vertex AI Feature Store</m-b>がある。
+      また、各特徴が推論にどのような影響を与えるか把握し、誤ったラベル・トレーニングデータを見つけるソリューションとして、
+      <m-b>Vertex Explainable AI</m-b>がある。
+    </p>
+
+    <h3>Vertex AI - モデルのモニタリング</h3>
+    <p><m-b>Vertex AI Model Monitoring</m-b>を使用し、デプロイされたモデルのパフォーマンスをモニタリングできる。</p>
+
+    <h3>Vertex AI - 提供されるAIモデル</h3>
+    <p>
+      <m-b>Model Garden</m-b>を使用すると、150を超えるLLMなどのAIモデルを利用することはできる。
+      Googleが開発したモデル以外にも、Meta社の<m-b>Llama2</m-b>やAnthropic社の<m-b>Claude</m-b>も利用できる。
+    </p>
 
     <h3>その他のソリューション</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>ソリューション</th>
+          <th>説明</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><m-b>Speech-to-Text</m-b></td>
+          <td>
+            音声データをテキストデータに変換する。<br />
+            <m-b>125</m-b>の言語に対応した<m-b>Chirp</m-b>という基盤モデルを利用する。
+          </td>
+        </tr>
+        <tr>
+          <td><m-b>Text-to-Speech</m-b></td>
+          <td>テキストデータを音声データに変換する。</td>
+        </tr>
+        <tr>
+          <td><m-b>Vision AI</m-b></td>
+          <td>画像を分析し、分類や検出などのタスクを行う。</td>
+        </tr>
+        <tr>
+          <td><m-b>Natural Language AI</m-b></td>
+          <td>自然言語の分析を行い、感情分析やエンティティ分析、コンテンツ分類などのタスクを行う。</td>
+        </tr>
+        <tr>
+          <td><m-b>Recommendations AI</m-b></td>
+          <td>レコメンドエンジンの機能を提供する。</td>
+        </tr>
+        <tr>
+          <td><m-b>Translation AI</m-b></td>
+          <td>ドキュメント、Webサイト、音声ファイル、動画などの翻訳タスクを行う。</td>
+        </tr>
+      </tbody>
+    </table>
 
     <h2>コンピューティング</h2>
 
@@ -262,6 +356,25 @@
     </p>
 
     <h3>Cloud Batch</h3>
+    <p>
+      Google Cloud上で大量のバッチジョブを効率的に実行するためのサービス。
+      コンピューティングリソースの<m-b>自動プロビジョニング</m-b>や、ジョブの<m-b>キュー管理</m-b>を行い、
+      ジョブの依存関係に基づいて<m-b>スケジューリング</m-b>を実行する。
+      HPCやデータ変換、機械学習のタスクなどを実行するのに適したソリューションと言える。<br />
+      1つの処理単位を<m-b>タスク</m-b>と呼び、その集合である一連の処理を<m-b>ジョブ</m-b>と呼ぶ。<br />
+      <m-b>リザーブドインスタンス</m-b>や<m-b>Spot VM</m-b>を活用することで、コストを抑えることができる。
+    </p>
+
+    <h3>Cloud Batch - アーキテクチャ</h3>
+    <ul>
+      <li><m-b>ジョブマネージャ</m-b>: 各タスクのキューイングや依存関係の管理、リソースの割り当てを行う。</li>
+      <li><m-b>Compute Engine インスタンス</m-b>: 自動的にプロビジョニングされ、ジョブを実行するランタイムを提供する。</li>
+      <li><m-b>スケジューラ</m-b>: ジョブのスケジュールを管理し、指定された順序・タイミングでタスクを実行する。</li>
+      <li>
+        <m-b>ストレージ</m-b>: 入力データや出力データを保持するため、<m-b>Cloud Storage</m-b
+        >や<m-b>BigQuery</m-b>と統合されている。
+      </li>
+    </ul>
 
     <h2>コンテナ</h2>
 
@@ -1298,6 +1411,8 @@
     </p>
 
     <h3>Cloud Key Management</h3>
+
+    <h3>Security Command Center</h3>
 
     <h3>BeyondCorpモデル</h3>
     <p><m-b>Google</m-b>が提唱する<m-b>ゼロトラスト</m-b>のセキュリティモデル。 以下の機能を持つ。</p>

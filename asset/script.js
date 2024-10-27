@@ -50,11 +50,20 @@ const createMaskBlockAction = () => {
 }
 
 // h2、h3ヘッダーに一意なIDを付与するメソッド
-const addHeaderId = () => {
-    $('h2, h3').each((i, e) => {
-        const id = `header-${i}`;
+const addHeaderId = async () => {
+    for (const e of $('h2, h3')) {
+        const text = $(e).text();
+        const hashBuffer = await crypto.subtle.digest(
+            'SHA-256',
+            new TextEncoder().encode(text),
+        );
+        const hashArray = Array.from(new Uint8Array(hashBuffer));
+        const id = hashArray.map(
+            byte => byte.toString(16).padStart(2, '0')
+        ).join('').substring(0, 64);
         $(e).attr('id', id);
-    });
+        $(e).addClass('header-item');
+    }
 };
 
 // h2、h3ヘッダーに「学習済み」チェックボックスを付与するメソッド
@@ -110,21 +119,19 @@ const createContentTree = () => {
 const toggleContentTreeVisibility = () => {
     const checked = $('#toggle-show-complete-content').prop('checked');
     for (let id of Object.keys(practiceProgressData)) {
-        if (id.startsWith('header-')) {
-            if (practiceProgressData[id] && !checked) {
-                $(`details[data-for-header="${id}"]`).hide();
-                $(`li[data-for-header="${id}"]`).hide();
-            } else {
-                $(`details[data-for-header="${id}"]`).show();
-                $(`li[data-for-header="${id}"]`).show();
-            }
+        if (practiceProgressData[id] && !checked) {
+            $(`details[data-for-header="${id}"]`).hide();
+            $(`li[data-for-header="${id}"]`).hide();
+        } else {
+            $(`details[data-for-header="${id}"]`).show();
+            $(`li[data-for-header="${id}"]`).show();
         }
     }
 };
 
 // 学習進捗を更新するメソッド
 const updatePracticeProgress = () => {
-    const total = $.makeArray($('h2, h3')).reduce((pv, cv) => pv + ($(cv).attr('id').startsWith('header-') ? 1 : 0), 0);
+    const total = $.makeArray($('h2, h3')).reduce((pv, cv) => pv + ($(cv).hasClass('header-item') ? 1 : 0), 0);
     const done = Object.values(practiceProgressData).reduce((pv, cv) => pv + (cv ? 1 : 0), 0);
     $('#practice-progress').text(`${done} / ${total}`);
 };
@@ -151,7 +158,7 @@ $(async () => {
     console.log(practiceProgressData);
 
     createMaskBlockAction();
-    addHeaderId();
+    await addHeaderId();
     addPracticeCompleteBox();
     createContentTree();
     toggleContentTreeVisibility();
