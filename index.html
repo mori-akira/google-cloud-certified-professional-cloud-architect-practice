@@ -1462,7 +1462,17 @@
       を実現することが可能。
     </p>
 
-    <h3>Cloud Key Management</h3>
+    <h3>Cloud Key Management Service</h3>
+    <p>
+      暗号鍵を集中して管理するサービス。
+      <m-b>作成</m-b>、<m-b>インポート</m-b>、<m-b>管理</m-b>を行うことができる。<br />
+      Google Cloud上のストレージは、デフォルトで暗号化されていて、Compute EngineのディスクやCloud Storageなどは
+      <m-b>AES-256</m-b>方式で暗号化され、暗号鍵はGoogle Cloudによって管理・監査・ローテーションされる。
+      一方、データをデフォルトの暗号鍵でなく<m-b>顧客管理の鍵</m-b>(<m-b>CMEK</m-b>)を指定することもできる。
+      このとき、この鍵はCloud KMSで管理することができる。<br />
+      <m-b>透過的な暗号化</m-b>の機能により、ユーザは暗号化を意識することなくデータにアクセスすることができる。
+      この時、鍵へのアクセス権限が必要なのは、鍵を参照する<m-b>サービスアカウント</m-b>となる。
+    </p>
 
     <h3>Security Command Center</h3>
 
