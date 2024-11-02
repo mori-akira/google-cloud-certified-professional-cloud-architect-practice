@@ -1426,6 +1426,31 @@
       >が提供されている。 これによりアーティファクトの脆弱性を検知したり、<m-b>SBOM</m-b>の生成を自動化することができる。
     </p>
 
+    <h3>Deployment Manager</h3>
+    <p>
+      Google Cloudのリソースを作成・管理するための<m-b>IaC</m-b>サービス。
+      <m-b>YAML</m-b>形式でリソースの構成を記述する。
+      複数のリソースで構成を共有する場合、<m-b>テンプレート</m-b>を作成し、構成ファイルで参照することができる。
+      これは<m-b>Python</m-b>または<m-b>Jinja2</m-b>形式で記述する。
+    </p>
+
+    <h3>Cloud Foundation Toolkit</h3>
+    <p>
+      <m-b>IaC</m-b>としてGoogle
+      Cloudリソースを作成・管理するために用意された、オープンソースの<m-b>テンプレート</m-b>一覧である。 Google
+      Cloudにおけるベストプラクティスが反映された<m-b>テンプレート</m-b>が使用でき、
+      <m-b>Deployment Manager</m-b>と<m-b>Terraform</m-b>で使用できるものが用意されている。
+      利用者の要件に合わせてカスタマイズすることも可能である。
+    </p>
+
+    <h3>Config Connector</h3>
+    <p>
+      <m-b>Kubernetesのマニフェスト</m-b>を用いてオブジェクトを作成するのと同じ方法で、Google Cloudリソースを作成するための、
+      <m-b>Kubernetes</m-b>の拡張機能である。 これにより、<m-b>kubectl</m-b>コマンドでGoogle
+      Cloudリソースが作成できるようになる。
+      <m-b>マニフェスト</m-b>の定義と現在のリソース状態が異なる場合、<m-b>定義された状態に修正される</m-b>。
+    </p>
+
     <h2>アクセス管理</h2>
 
     <h3>Cloud IAM</h3>
