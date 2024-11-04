@@ -1284,6 +1284,35 @@
       </tbody>
     </table>
 
+    <h3>Cloud Load Balancing - ネットワーク・エンドポイント・グループ</h3>
+    <p>
+      ロードバランサにおいて、バックエンドのエンドポイントやサービスをグルーピングするサービス。
+      これにより、例えばGKEであれば、VMでなく<m-b>Pod</m-b>レベルでトラフィックをロードバランスすることができる。<br />
+      以下のような種類がある。
+    </p>
+    <table>
+      <thead>
+        <tr>
+          <th>NEGの種類</th>
+          <th>説明</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><m-b>ゾーンNEG</m-b></td>
+          <td>Compute EngineインスタンスまたはGKE Podに解決する内部IPアドレスエンドポイントをグルーピングする。</td>
+        </tr>
+        <tr>
+          <td><m-b>インターネットNEG</m-b></td>
+          <td>Google Cloud外部のインターネットルーティングエンドポイントをグルーピングする。</td>
+        </tr>
+        <tr>
+          <td><m-b>サーバーレスNEG</m-b></td>
+          <td>Cloud RunやApp Engineのような、サーバーレスサービスに解決するエンドポイントをグルーピングする。</td>
+        </tr>
+      </tbody>
+    </table>
+
     <h3>Cloud CDN</h3>
     <p>
       高速なコンテンツ配信を実現するプロダクト。
